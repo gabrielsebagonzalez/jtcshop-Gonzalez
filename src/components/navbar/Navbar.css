@@ -1,0 +1,26 @@
+.Navbar {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:  #91C612;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 25px;
+    margin: 15px;
+}
+
+.nav-items a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.logo-carrito {
+    height: 40px;
+    margin: 20px;
+}
