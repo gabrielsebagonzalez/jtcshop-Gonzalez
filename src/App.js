@@ -11,9 +11,11 @@ function App() {
       <Navbar />
       <ItemListContainer greeting='Lista de Productos'/>
       <ItemCount stock={8} inicio={1}/>
-
     </div>
   );
 }
-
+      
 export default App;
+
+
+

@@ -6,11 +6,5 @@
 
 .App {
   background-color: black;
-  height: 100vh;
   color: white;
-}
-
-.counter {
-  display: flex;
-  background-color: chartreuse;
 }
