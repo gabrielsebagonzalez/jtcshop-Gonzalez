@@ -6,5 +6,6 @@
 
 .App {
   background-color: black;
+  height: 100vmax;
   color: white;
 }
