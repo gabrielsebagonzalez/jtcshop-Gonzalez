@@ -24,3 +24,8 @@
     height: 40px;
     margin: 20px;
 }
+
+.link-activo {
+    border-radius: 10px;
+    border: 2px solid white;
+}
