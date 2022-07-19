@@ -9,6 +9,11 @@
   cursor: pointer;
 }
 
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 1px 1px 10px rgb(201, 197, 6);
+}
+
 .card-image {
   height: 200px;
   width: 200px;
@@ -25,4 +30,16 @@
   justify-content: space-around;
   margin: 15px 15px;
   padding: 10px 10px;
+
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  margin: 5px 5px;
+  padding: 5px 5px;
+  border-radius: 5px;
 }

@@ -10,7 +10,9 @@ export const Navbar = () => {
         <Link to='/' className='nav-logo'>JTC Shop</Link >
         <div className='nav-items'>
             <NavLink to='/' className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Home</NavLink>
-            <NavLink to='/detail/:id'className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Categoría</NavLink>
+            <NavLink to='/categorias/perifericos'className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Perifericos</NavLink>
+            <NavLink to='/categorias/computadoras'className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Computadoras</NavLink>
+            <NavLink to='/categorias/tablet'className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Tablets</NavLink>
         </div>
         <CartWidget/>
     </div>

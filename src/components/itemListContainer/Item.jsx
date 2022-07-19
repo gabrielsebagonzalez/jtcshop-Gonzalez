@@ -2,7 +2,7 @@ import React from 'react'
 import './item.css'
 import {Link} from 'react-router-dom'
 
-const Item = ({item, id}) => {
+const Item = ({item}) => {
   return (
     <div className='card'>
         <img src={item.img} alt="" className='card-image'/>
@@ -12,7 +12,7 @@ const Item = ({item, id}) => {
         </div>
 
         <div>
-          <Link to={`/item/${id}`}><button>Detalle</button></Link>
+          <Link to={`/item/${item.id}`}><button>Detalle</button></Link>
         </div>
     </div>
 

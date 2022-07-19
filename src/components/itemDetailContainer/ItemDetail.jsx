@@ -3,24 +3,24 @@ import ItemCount from '../itemCount/ItemCount'
 
 const ItemDetail = ({item}) => {
 
-    const {nombre, precio, img, stock, descripcion} = item
+    //const {nombre, precio, img, stock, descripcion} = item
 
     return (
 
         <div className="itemDetail">
             <div className="img-detail-cont">
-                <img src={img} alt={nombre} className='img-detail'/>
+                <img src={item.img} alt={item.nombre} className='img-detail'/>
             </div>
             <div className="text-container">
                 <div className="titulo-container">
-                    <h1>{nombre}</h1>
-                    <h3>${precio}</h3>
+                    <h1>{item.nombre}</h1>
+                    <h3>${item.precio}</h3>
                 </div>
                 <p>
-                    {descripcion}
+                    {item.descripcion}
                 </p>
-                <p>Stock Disponible {stock}</p>
-                <ItemCount stock={8} inicio={1}/>
+                <p>Stock Disponible {item.stock}</p>
+                <ItemCount stock={item.stock} inicio={1}/>
             </div>
         </div>
     )

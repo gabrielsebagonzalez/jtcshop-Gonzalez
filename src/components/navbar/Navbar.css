@@ -10,6 +10,8 @@
     font-weight: 700;
     font-size: 25px;
     margin: 15px;
+    text-decoration: none;
+    color: white;
 }
 
 .nav-items a {

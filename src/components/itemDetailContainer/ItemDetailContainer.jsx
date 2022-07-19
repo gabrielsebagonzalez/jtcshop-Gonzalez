@@ -1,31 +1,31 @@
 import { useState, useEffect } from "react";
-import { productos } from "../mock/productos";
+import { productos }  from '../../mock/productos'
 import ItemDetail from "./ItemDetail";
-import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom';
 
 
 const ItemDetailContainer = () => {
-    const {id} = useParams();
-    const [item, setItems] = useState ({})
+    const [item, setItem] = useState ({})
+    const { id } = useParams();
 
-    const traerItem = () => {
+    const traerItemId = () => {
         return new Promise((resolve) => {
             setTimeout (() => {
-                resolve(productos.find(obj => obj.id === 3))
+                resolve(productos.find(obj => obj.id === id))
             }, 1000)
             
         })
     }
 
     useEffect (() => {
-        traerItem().then(respuesta => {
-            setItems(respuesta)
+        traerItemId().then(respuesta => {
+            setItem(respuesta)
         })
         
-    }, [id])
+    },[])
 
     return (
-       < ItemDetail item={item}/>       
+       < ItemDetail item={item}/>     
     )
 
 }
