@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './ItemCount.css'
 
-export const ItemCount = ({stock, inicio}) => {
+export const ItemCount = ({stock, inicio, onAdd}) => {
 
     const [contador, setContador] = useState(inicio)
 
@@ -17,11 +17,7 @@ export const ItemCount = ({stock, inicio}) => {
         }
     }
 
-    const agregarAlCarrito = () => {
-        if (contador <= stock) {
-            alert(`Se agregaron al carrito ${contador} productos`)
-        }
-    }
+
 
   return (
     <div className='counter'>
@@ -32,7 +28,7 @@ export const ItemCount = ({stock, inicio}) => {
         </div>
 
         <div>
-            <button onClick={agregarAlCarrito} className='agregar-btn'>Agregar al carrito</button>
+            <button onClick={() => onAdd(contador)} className='agregar-btn'>Agregar al carrito</button>
         </div>
 
     </div>
