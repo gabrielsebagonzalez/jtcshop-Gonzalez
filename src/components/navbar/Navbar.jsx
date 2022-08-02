@@ -14,7 +14,9 @@ export const Navbar = () => {
             <NavLink to='/categorias/computadoras'className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Computadoras</NavLink>
             <NavLink to='/categorias/tablet'className={({isActive}) => isActive? 'link-activo' : 'nav-items a' }>Tablets</NavLink>
         </div>
-        <CartWidget/>
+        <Link to={'/cart'}>
+            <CartWidget/>
+        </Link>
     </div>
     )
 }

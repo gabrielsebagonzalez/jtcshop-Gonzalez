@@ -34,6 +34,8 @@ const ItemDetail = ({item}) => {
                 ? <ItemCount stock={item.stock} inicio={1} onAdd={onAdd}/>
                 : (<Link to='/cart'>Ir al carrito</Link>
                 )}
+                <br/>
+                <Link to="/">Seguir comprando</Link>
             </div>
         </div>
     )
