@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { productos } from '../../mock/productos'
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 
@@ -8,19 +8,21 @@ export const ItemListContainer = ({greeting}) => {
   const [item, setItem] = useState([]);
   const { categoria } = useParams();
 
-   useEffect(() => {
-    const renderizarProductos = () => new Promise((resolve) => {
-      setTimeout(() => {
-        resolve( categoria ? productos.filter(obj => obj.categoria === categoria) : productos);
-      }, 1000)
-    })
-    renderizarProductos() 
-      .then((datos) => {
-        setItem(datos)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+
+
+    useEffect(() => {
+
+      const querydb = getFirestore();
+      const queryCollection = collection(querydb, 'items')
+      if(categoria) {
+        const queryFilter = query(queryCollection, where('categoria', '==', categoria ))
+        getDocs(queryFilter)
+        .then(res => setItem(res.docs.map(product => ({id: product.id, ...product.data()}))));
+
+      } else {
+        getDocs(queryCollection)
+        .then(res => setItem(res.docs.map(product => ({id: product.id, ...product.data()}))));
+      }
 
   }, [categoria])
 
