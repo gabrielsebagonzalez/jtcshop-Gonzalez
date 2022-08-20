@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { cartContext } from "../../context/cartContext"
 import { Link } from 'react-router-dom'
 import { addDoc, collection, getFirestore } from "firebase/firestore"
+import './cart.css'
 
 
 
@@ -35,30 +36,30 @@ const Cart = () => {
     }
 
   return (
-    <div>
+    <div className="cart-container">
         {
             cart.map((prod) => (
-                <div key={prod.id} style={{color:"white"}}>
+                <div key={prod.id} style={{color:"white"}} className="cart-item">
                     <img src={prod.img} alt="" />
                     <div>
-                        <h2>{prod.nombre}</h2>
+                        <h2>Articulo: {prod.nombre}</h2>
                         <h2>Cantidad: {prod.cantidad}</h2>
-                        <h2>${prod.precio}</h2>
+                        <h2>Precio: ${prod.precio}</h2>
                     </div>
                     <div>
-                        <button onClick={() => deleteOne(prod.id)}>Eliminar</button>
+                        <button onClick={() => deleteOne(prod.id)} className='btn-eliminar'>Eliminar</button>
                     </div>
                 </div>
 
             ))
         }
-        <div>
-            <button onClick={deleteAll}>Eliminar Todos los productos</button>
+        <div className='btn-container'>
+            <button onClick={deleteAll} >Eliminar Todos los productos</button>
         </div>
         <div>
             <h3>Total: ${suma}</h3>
         </div>
-        <div>
+        <div className="btn-order">
             <button onClick={createOrder}>Crear Orden</button>
         </div>
     </div>
